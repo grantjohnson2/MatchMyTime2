@@ -12,11 +12,13 @@ export default function Home() {
   const [eventName, setEventName] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+  const [timeZone, setTimezone] = useState("");
 
   const handleCreateEventClick = () => {
     console.log("Event Name:", eventName);
     console.log("Start Time:", startTime);
     console.log("End Time:", endTime);
+    console.log("Time Zone:", timeZone);
     // if un commented will go to a new page that i already created
     // router.push("/events"); // Navigate to the events page
   };
@@ -33,9 +35,10 @@ export default function Home() {
         onChange={(e) => setEventName(e.target.value)}
       />
       <p>What times may work</p>
-      <ComboboxDemo>
-        
-      </ComboboxDemo>
+      <ComboboxDemo 
+         value={timeZone} 
+         setValue={setTimezone}
+      />
       <div id="select-time" className="flex items-center space-x-2">
         <input 
           type="time" 
