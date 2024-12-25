@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { Input } from "@/components/ui/input"
 import { ComboboxDemo } from "@/components/ui/combobox"
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+} from "@/components/ui/toggle-group"
 import { useRouter } from "next/navigation"; // For Next.js 13+, use 'next/navigation' instead
 import { useState } from "react";
 
@@ -55,6 +59,14 @@ export default function Home() {
         />
       </div>
       <p>What days may work?</p>
+      <ToggleGroup type="single">
+        <ToggleGroupItem value="dates">
+          Dates
+        </ToggleGroupItem>
+        <ToggleGroupItem value="daysOfWeek">
+          Days of Week
+        </ToggleGroupItem>
+      </ToggleGroup>
       <Calendar></Calendar>
       <Button onClick={handleCreateEventClick}>Create Event</Button>
     </main>
