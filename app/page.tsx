@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { Input } from "@/components/ui/input"
+import { ComboboxDemo } from "@/components/ui/combobox"
 import { useRouter } from "next/navigation"; // For Next.js 13+, use 'next/navigation' instead
 import { useState } from "react";
 
@@ -32,6 +33,9 @@ export default function Home() {
         onChange={(e) => setEventName(e.target.value)}
       />
       <p>What times may work</p>
+      <ComboboxDemo>
+        
+      </ComboboxDemo>
       <div id="select-time" className="flex items-center space-x-2">
         <input 
           type="time" 
