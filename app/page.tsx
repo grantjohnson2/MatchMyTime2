@@ -19,6 +19,8 @@ export default function Home() {
   const [endTime, setEndTime] = useState("");
   const [timeZone, setTimezone] = useState("");
   const [viewType, setViewType] = useState("dates"); // To toggle between views
+  const [date, setDate] = useState<Date | undefined>(new Date())
+
 
 
   const handleCreateEventClick = () => {
@@ -27,6 +29,8 @@ export default function Home() {
     console.log("End Time:", endTime);
     console.log("Time Zone:", timeZone);
     console.log("View Type:", viewType);
+    console.log("Selected Date:", date);
+
     // if un commented will go to a new page that i already created
     // router.push("/events"); // Navigate to the events page
   };
@@ -84,7 +88,12 @@ export default function Home() {
 
       {/* Conditional Calendar Based on Selected View */}
       {viewType === "dates" ? (
-        <Calendar />
+        <Calendar 
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          className="rounded-md border shadow"
+        />
       ) : (
         <DaysOfWeekPicker />
       )}
