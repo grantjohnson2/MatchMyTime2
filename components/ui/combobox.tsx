@@ -45,12 +45,12 @@ export function ComboboxDemo({ value, setValue }: ComboboxDemoProps) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-[200px] justify-between text-custom-lightblue"
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : "Select timezone..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50 " />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">

@@ -6,6 +6,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.text-custom-lightblue {
+  color: #A3CAE9;
+}
+
+.text-custom-lightgrey {
+  color: #ACACAC;
+}
+
+.text-custom-greyblue {
+  color: #6E9FC1 !important;
+}
+
+.bg-custom-greyblue {
+  color: #6E9FC1;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

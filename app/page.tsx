@@ -11,6 +11,7 @@ import {
 import { DaysOfWeekPicker } from "@/components/ui/daysOfWeekPicker"; // Import the component
 import { useRouter } from "next/navigation"; // For Next.js 13+, use 'next/navigation' instead
 import { useState } from "react";
+import "@/app/globals.css";
 
 export default function Home() {
   const router = useRouter();
@@ -37,42 +38,42 @@ export default function Home() {
 
   return (
     <main className="h-screen flex flex-col gap-2 justify-center items-center">
-      <h1 className="text-3xl font-bold">Welcome to MatchMyTime!</h1>
-      <h2 className="text-xl font-semibold">Let's Create an Event</h2>
+      <h1 className="text-3xl font-bold text-custom-lightblue">Welcome to MatchMyTime!</h1>
+      <h2 className="text-xl font-semibold text-custom-lightgrey">Let's Create an Event</h2>
 
       {/* Event Name Input */}
       <Input 
         type="text" 
         placeholder="Event Name" 
-        className="w-60" 
+        className="w-60 text-custom-lightblue" 
         value={eventName}
         onChange={(e) => setEventName(e.target.value)}
       />
 
       {/* Time Selection */}
-      <p>What times may work</p>
+      <p className="text-custom-lightgrey">What times may work</p>
       <ComboboxDemo 
          value={timeZone} 
          setValue={setTimezone}
       />
-      <div id="select-time" className="flex items-center space-x-2">
+      <div id="select-time" className="flex items-center space-x-2 text-custom-lightgrey">
         <input 
           type="time" 
-          className="border rounded px-2 py-1" 
+          className="border rounded px-2 py-1 text-custom-lightblue" 
           value={startTime}
           onChange={(e) => setStartTime(e.target.value)}
         />
         <p>to</p>
         <input 
           type="time" 
-          className="border rounded px-2 py-1" 
+          className="border rounded px-2 py-1 text-custom-lightblue" 
           value={endTime}
           onChange={(e) => setEndTime(e.target.value)}
         />
       </div>
 
       {/* Toggle View Between Dates and Days of Week */}
-      <p>What days may work?</p>
+      <p className="text-custom-lightgrey">What days may work?</p>
       <ToggleGroup 
         type="single"        
         value={viewType} 
