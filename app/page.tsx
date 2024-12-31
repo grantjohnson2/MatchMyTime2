@@ -33,7 +33,7 @@ export default function Home() {
     console.log("Selected Date:", date);
 
     // if un commented will go to a new page that i already created
-    // router.push("/events"); // Navigate to the events page
+    router.push("/events"); // Navigate to the events page
   };
 
   return (
@@ -45,11 +45,11 @@ export default function Home() {
       <Input 
         type="text" 
         placeholder="Event Name" 
-        className="w-60 text-custom-lightblue" 
+        className="w-60 text-custom-lightblue placeholder-custom-lightblue" 
         value={eventName}
         onChange={(e) => setEventName(e.target.value)}
       />
-
+      
       {/* Time Selection */}
       <p className="text-custom-lightgrey">What times may work</p>
       <ComboboxDemo 
@@ -100,7 +100,7 @@ export default function Home() {
       )}
 
       {/* Create Event Button */}
-      <Button onClick={handleCreateEventClick}>Create Event</Button>
+      <Button className="bg-buttonBlue text-white hover:bg-opacity-80" onClick={handleCreateEventClick}>Create Event</Button>
     </main>
   );
 }
